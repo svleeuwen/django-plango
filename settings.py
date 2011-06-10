@@ -69,6 +69,11 @@ STATIC_ROOT = os.path.join(BASE_PATH, 'static/')
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    #"django.contrib.staticfiles.finders.AppDirectoriesFinder",
+)
+
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
@@ -165,11 +170,15 @@ MARKITUP_SET = 'markitup/sets/textile'
 
 GOOGLE_ANALYTICS_TAG = ''
 
+CACHE_PREFIX = 'v1'
+CACHE_TIMEOUT = 60
+CACHE_COUNT_TIMEOUT = 60
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': '127.0.0.1:11211',
-        'TIMEOUT': '3600',
+        'TIMEOUT': CACHE_TIMEOUT,
+        'PREFIX': CACHE_PREFIX,
     }
 }
 

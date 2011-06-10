@@ -2,9 +2,9 @@ from datetime import datetime
 import time
 
 def from_unixtime(timestamp):
-    if timestamp:
+    try:
         return datetime.fromtimestamp(float(timestamp))
-    else:
+    except:
         return datetime.fromtimestamp(0)
 
 def unix_timestamp(dt):
