@@ -1,0 +1,27 @@
+/***
+ * * Fabrique skeleton - Internet Explorer stylesheet
+ * 
+ * Author: Fabrique [brands, design & interaction] - http://fabrique.nl/
+ *         MartijnG, Anna & Dodi ... <insert Fabriqueprojectmembers here>
+ * Date: 2011-03-18
+ */
+
+
+
+.ie6 legend,
+.ie7 legend {
+  margin-left: -7px;
+}
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+div,
+header,
+article,
+footer,
+section,
+nav,
+.clearfix {
+  zoom: 1;
+}

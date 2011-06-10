@@ -1,0 +1,10 @@
+Django
+South
+django-debug-toolbar
+django-compressor
+django-extensions
+django-markitup
+django-tagging
+python-memcached
+sorl-thumbnail
+textile

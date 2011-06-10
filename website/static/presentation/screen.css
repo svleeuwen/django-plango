@@ -1,0 +1,337 @@
+/***
+ * * Fabrique skeleton - main stylesheet
+ * 
+ * Author: Fabrique [brands, design & interaction] - http://fabrique.nl/
+ *         MartijnG, Anna & Dodi ... <insert Fabriqueprojectmembers here>
+ * Date: 2011-03-18
+ * 
+ * TOC
+ * ##ELEMENTS
+ * ##TOOLBOX
+ * ##GENERIC
+ * ##NAVIGATION
+ * ##CONTENT
+ */
+
+
+
+
+/***
+ * ##ELEMENTS
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html { overflow-y: scroll; }
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  color: #333;
+  font-size: 85%;
+  *font-size: small;
+  font-family: "Helvetica", "Arial", sans-serif;
+  background: #fff;
+} 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+h1 {
+  margin: 0;
+  color: #2ca3df;
+  font-size: 375%;
+  line-height: 95%;
+}
+h2 {
+  margin: 0 0 6px 0;
+  color: #2ca3df;
+  font-size: 130%;
+}
+::-moz-selection{
+  color: #666;
+  text-shadow: none;
+  background: #ffe200;
+}
+::selection {
+  color: #666;
+  text-shadow: none;
+  background: #ffe200;
+}
+a,
+a:active,
+a:visited {
+  color: #3e3e3f;
+  text-decoration: none;
+  -webkit-transition: color 0.25s ease-in-out;
+  -moz-transition: color 0.25s ease-in-out;
+  -o-transition: color 0.25s ease-in-out;
+  -webkit-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
+}
+a:hover { color: #036; }
+a:link { -webkit-tap-highlight-color: #ff5e99; }
+a:hover,
+a:active {
+  outline: none;
+}
+
+a img { border: 0; }
+
+p, li {
+  max-width: 42em;
+  line-height: 135%;
+}
+p { margin: 0 0 17px 0; }
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+ins {
+  color: #000;
+  text-decoration: none;
+  background-color: #ff9;
+}
+mark {
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+  background-color: #ff9;
+}
+del { text-decoration: line-through; }
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, sans-serif;
+}
+small { font-size: 85%; }
+strong,
+th {
+  font-weight: bold;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 15px;
+}
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+hr {
+  margin: 1em 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+  display: block;
+  height: 1px;
+}
+td { vertical-align: top; }
+
+
+ul,
+ol {
+  margin-left: 2em;
+}
+ol { list-style-type: decimal; }
+nav ul,
+nav li {
+  margin: 0;
+  list-style: none;
+  list-style-image: none;
+}
+
+form { margin: 0; }
+select,
+input,
+textarea,
+button {
+  font-size: 99%;
+}
+input,
+select {
+  vertical-align: middle;
+}
+textarea { overflow: auto; }
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+label,
+input[type="button"],
+input[type="submit"],
+input[type="image"],
+button {
+  cursor: pointer;
+}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+input:valid,
+textarea:valid   {
+}
+input:invalid,
+textarea:invalid {
+  border-radius: 1px;
+  -moz-box-shadow: 0px 0px 5px red;
+  -webkit-box-shadow: 0px 0px 5px red;
+  box-shadow: 0px 0px 5px red;
+}
+.no-boxshadow input:invalid,
+.no-boxshadow textarea:invalid {
+  background-color: #f0dddd;
+}
+button {}
+
+select,
+input,
+textarea {
+  color: #444;
+}
+fieldset {}
+
+article {}
+footer {}
+/* Elements - end */
+
+
+
+
+/***
+ * ##TOOLBOX
+ */
+.ir {
+  display: block;
+  overflow: hidden;
+  text-indent: -999em;
+  text-align: left;
+  direction: ltr;
+  background-repeat: no-repeat;
+}
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+.visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+.invisible { visibility: hidden; }
+
+div:before,
+div:after,
+article:before,
+article:after,
+header:before,
+header:after,
+footer:before,
+footer:after,
+section:before,
+section:after,
+nav:before,
+nav:after,
+.clearfix:before,
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+div:after,
+header:after,
+article:after,
+footer:after,
+section:after,
+nav:after,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0.0001em;
+  visibility: hidden;
+}
+/* Toolbox - end */
+
+
+
+
+/***
+ * ##GENERIC
+ */
+.framework {
+  margin: 0 auto;
+}
+/* Generic - end */
+
+
+
+
+/***
+ * ##NAVIGATION
+ */
+/* Navigation - end */
+
+
+
+
+/***
+ * ##CONTENT
+ */
+/* Content - end */
