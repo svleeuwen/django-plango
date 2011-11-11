@@ -5,7 +5,7 @@ django-compressor
 django-extensions
 django-markitup
 django-tagging
-cache-machine
+django-cache-machine
 python-memcached
 sorl-thumbnail
 textile
