@@ -1,59 +1,114 @@
-{% load compressor_tags %}
-<!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="nl"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="nl"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="nl"> <![endif]-->
+{% load compressor_tags %}<!doctype html>
+<!-- TODO: set Language-code! -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="nl"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8 ie7" lang="nl"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9 ie8" lang="nl"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="nl"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+	<!-- TODO: set this header server-side? -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- TODO: set appropriate domains (for static files/images) -->
+	<link rel="dns-prefetch" href="//ajax.googleapis.com">
+	<link rel="dns-prefetch" href="//static.example.nl">
+
+	<title>{% block page-title %}{% endblock %}</title>
+
+	<!-- TODO: provide META-information -->
   <meta name="description" content="{% block meta-description %}{% endblock %}">
+  <meta name="keywords" content="{% block meta-keywords %}{% endblock %}">
   <meta name="author" content="{% block meta-author %}{% endblock %}">
+
+	<!-- TODO: provide META-information -->
   <meta name="DC.creator" content="{% block meta-dc-creator %}{% endblock %}">
   <link rel="DC.creator" href="{% block link-dc-creator %}{% endblock %}">
-  <meta name="keywords" content="{% block meta-keywords %}{% endblock %}">
   <meta name="DC.contributor" content="Fabrique [brands, design &amp; interaction]">
   <link rel="DC.contributor" href="http://www.fabrique.nl/">
-  <title>{% block page-title %}{% endblock %}</title>
-<!-- For Apple Mobile - start -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="{{ STATIC_URL }}website/images/favicon.ico">
-  <link rel="apple-touch-icon" href="{{ STATIC_URL }}website/images/apple-touch-icon.png">
-<!-- For Apple Mobile - end -->
-<!-- Stylesheets - start -->
-  {% compressed "css" "css_file_link" %}
-  <link rel="stylesheet" href="{{ STATIC_URL }}website/presentation/html5boilerplate_style.css" media="all">
-  <link rel="stylesheet" href="{{ STATIC_URL }}website/presentation/screen.css" media="screen,projection,print">
-  <!--[if IE]><link rel="stylesheet" href="{{ STATIC_URL }}website/presentation/ie.css" media="screen,projection"><![endif]-->
-<!-- Stylesheets - end -->
-  <script src="{{ STATIC_URL }}generic/behaviour/modernizr-2.0.6.min.js"></script>
+
+	<!-- site-wide meta -->
+	<meta property="og:site_name" content="">
+	<meta property="fb:admins" content="">
+	<meta property="og:image" content="{{ STATIC_URL }}website/presentation/logos/example-avatar.png">
+
+	<!-- page-specific meta -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="{% block page-title %}{% endblock %}">
+	<meta property="og:url" content="">
+	<!-- TODO: provide meta-urls -->
+	<link rel="alternate" title="" href="">
+	<link rel="canonical" href="http://">
+	<link rel="index" title="" href="">
+	<link rel="prev" title="" href="">
+	<link rel="next" title="" href="">
+
+	<!-- TODO: create search-plugin xml:  -->
+	<link rel="search" title="" type="application/opensearchdescription+xml" href="">
+
+	<!-- TODO: check path to logo's -->
+	<link rel="SHORTCUT ICON" href="{{ STATIC_URL }}website/presentation/logos/example-favicon.ico">
+	<link rel="apple-touch-icon-precomposed" size="114x114" href="{{ STATIC_URL }}website/presentation/logos/example-icon114.png">
+	<link rel="apple-touch-icon-precomposed" size="72x72" href="{{ STATIC_URL }}website/presentation/logos/example-icon72.png">
+	<link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}website/presentation/logos/example-icon57.png">
+
+	<!-- TODO: check optimal viewport -->
+	<meta name="viewport" content="width=device-width">
+
+	<!-- TODO: build single (compressed) main.css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}website/presentation/main.css">
+
+	<!-- TODO: build custom Modernizr: http://www.modernizr.com/download/ -->
+	<script src="{{ STATIC_URL }}website/behaviour/libs/modernizr.min.js"></script>
+
   {% block extra-head-slot %}{% endblock %}
+
 </head>
 <body class="{% block body-class %}{% endblock %}">
+<a href="#main" id="skip-to-main">Skip to main content</a>
 
-  {% comment %}
-    Here goes the awesomesauce.
-  {% endcomment %}
+<header class="main">
 
-  <!-- Scripts - start -->
-  <script src="{{ STATIC_URL }}generic/behaviour/jquery-1.6.2.min.js"></script>
-  <script src="{{ STATIC_URL }}website/behaviour/plugins.js"></script>
-  <script src="{{ STATIC_URL }}website/behaviour/engine.js"></script>
-  <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
+	<h1 class="logo">
+		<a href="#TODO" rel="home"><span class="">Example</span></a>
+	</h1>
 
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', '{{ GOOGLE_ANALYTICS_TAG }}']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-  <!-- Scripts - end -->
+	<nav role="navigation">
+	</nav>
+
+</header>
+
+<div id="main" class="main" role="main" tabindex="-1">
+
+
+{% comment %}
+  Here goes the awesomesauce.
+{% endcomment %}
+
+
+</div>
+
+<footer class="main" role="contentinfo">
+
+	<nav role="navigation">
+	</nav>
+
+</footer>
+
+
+<!-- TODO: choose jQuery-version + remove local-dev-version -->
+<script src="{{ STATIC_URL }}website/behaviour/libs/jquery-1.7.1-min.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+<script>window.jQuery || document.write('<script src="{{ STATIC_URL }}website/behaviour/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+<!-- Page-specific scripts -->
+
+
+<script src="{{ STATIC_URL }}website/behaviour/engine.js"></script>
+
+<script>
+var _gaq=[['_setAccount','{{ GOOGLE_ANALYTICS_TAG }}'],['_trackPageview']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
 </body>
 </html>
