@@ -1,0 +1,28 @@
+<VirtualHost *:80>
+    ServerName staging.bcd-nv.com
+    ServerAlias staging.bcd-nv.com
+
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^example.nl [NC]
+    RewriteRule ^(.*)$ http://www.example.nl$1 [R=301,L]
+
+    DocumentRoot /var/www/bcd/staging-env/
+
+    Alias /media/ /var/www/bcd/staging/media/
+    <Directory /var/www/bcd/staging/media>
+        Order deny,allow
+        Allow from all
+    </Directory>
+
+    Alias /static/ /var/www/bcd/staging/static/
+    <Directory /var/www/bcd/staging/static>
+        Order deny,allow
+        Allow from all
+    </Directory>
+
+    WSGIDaemonProcess bcd.staging user=www-data group=www-data processes=4 threads=1 umask=0002 display-name=%{GROUP}
+    WSGIProcessGroup bcd.staging
+
+    WSGIScriptAlias / /var/www/bcd/staging/wsgi/staging.wsgi
+</VirtualHost>
+
