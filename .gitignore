@@ -1,0 +1,4 @@
+*.pyc
+pip-log.txt
+local_settings.py
+.sass-cache
