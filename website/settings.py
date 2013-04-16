@@ -1,7 +1,7 @@
 import sys, os.path
 # Django settings for website project.
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 BASE_PATH = os.path.abspath(os.path.dirname(".."))
 
@@ -25,6 +25,10 @@ if 'test' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
     SOUTH_TESTS_MIGRATE = False
 
+# Hosts/domain names that are valid for this site; required if DEBUG is False
+# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = []
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -32,11 +36,11 @@ if 'test' in sys.argv:
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Europe/Amsterdam'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'nl-nl'
 
 SITE_ID = 1
 
@@ -131,6 +135,10 @@ INSTALLED_APPS = (
     # 'sorl.thumbnail',
     # 'markitup',
     # 'textile',
+    # 'feincms',
+    # 'mptt',
+    # 'feincms.module.page',
+    # 'feincms.module.medialibrary',
     'south',
     'website',
 )

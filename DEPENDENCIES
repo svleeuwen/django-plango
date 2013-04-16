@@ -7,3 +7,5 @@ django-cache-machine
 python-memcached
 sorl-thumbnail
 textile
+feincms
+django-mptt

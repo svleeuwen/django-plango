@@ -1,9 +1,0 @@
-Django
-South
-django-debug-toolbar
-django-extensions
-django-markitup
-django-cache-machine
-python-memcached
-sorl-thumbnail
-textile
